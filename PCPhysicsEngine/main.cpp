@@ -1,5 +1,5 @@
 /**********************************< Linking Section **********************************/
-#include "../libs/sdl/include/SDL.h"
+#include <SDL.h>
 #include <stdio.h>
 #include <string>
 #include <cmath>
