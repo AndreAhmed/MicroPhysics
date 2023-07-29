@@ -1,0 +1,4 @@
+﻿  main.c
+D:\Programming\01-Embedded_Systems\2D Physics Engine Project\MicroPhysics\2D_Physics_Engine\2D_Physics_Engine\main.h(55,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Programming\01-Embedded_Systems\2D Physics Engine Project\MicroPhysics\2D_Physics_Engine\2D_Physics_Engine\main.h(74,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  2D_Physics_Engine.vcxproj -> D:\Programming\01-Embedded_Systems\2D Physics Engine Project\MicroPhysics\2D_Physics_Engine\x64\Debug\2D_Physics_Engine.exe
