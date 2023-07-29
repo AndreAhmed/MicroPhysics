@@ -21,16 +21,17 @@ int main(int argc, char* args[])
         800, 600, 0);
 
     // Create a renderer to draw graphics on the window
-    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1 , SDL_RENDERER_ACCELERATED);
 
     // Set up two circles with initial positions, velocities, radius, and mass
-    Circle circle1 = { 100.0f, 100.0f, 0.0f, 0.0f, 20.0f, 1.0f };
-    Circle circle2 = { 150.0f, 200.0f, 0.0f, 0.0f, 25.0f, 2.0f };
+    Circle circle1 = { .x = 100.0f, .y = 100.0f, .velX = 0.0f, .velY = 0.0f, .radius = 20.0f, .mass =  1.0f };
+    Circle circle2 = { .x = 150.0f, .y = 200.0f, .velX = 0.0f, .velY = 0.0f, .radius = 25.0f, .mass = 2.0f };
 
     float deltaTime = 0.016f; // Time step for simulation (adjust as needed)
 
     int quit = 0;
-    while (!quit) {
+    while (!quit) 
+    {
         // Handle SDL events, such as window close
         SDL_Event event;
         while (SDL_PollEvent(&event)) 

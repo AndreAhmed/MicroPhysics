@@ -106,9 +106,10 @@ void drawCircle(SDL_Renderer* renderer, int x, int y, int radius)
 {
     int centerX = radius;
     int centerY = 0;
-    int err = 0;
+    int errorVal = 0;
 
-    while (centerX >= centerY) {
+    while (centerX >= centerY) 
+    {
         SDL_RenderDrawPoint(renderer, x + centerX, y + centerY);
         SDL_RenderDrawPoint(renderer, x + centerY, y + centerX);
         SDL_RenderDrawPoint(renderer, x - centerY, y + centerX);
@@ -118,14 +119,16 @@ void drawCircle(SDL_Renderer* renderer, int x, int y, int radius)
         SDL_RenderDrawPoint(renderer, x + centerY, y - centerX);
         SDL_RenderDrawPoint(renderer, x + centerX, y - centerY);
 
-        if (err <= 0) {
+        if (errorVal <= 0)
+        {
             centerY += 1;
-            err += 2 * centerY + 1;
+            errorVal += 2 * centerY + 1;
         }
 
-        if (err > 0) {
+        if (errorVal > 0)
+        {
             centerX -= 1;
-            err -= 2 * centerX + 1;
+            errorVal -= 2 * centerX + 1;
         }
     }
 }
