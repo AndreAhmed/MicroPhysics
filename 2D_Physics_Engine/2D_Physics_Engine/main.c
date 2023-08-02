@@ -1,5 +1,7 @@
 #include "main.h"
 
+
+
  /**
   * @brief The main function to run the 2D physics engine.
   *
@@ -12,7 +14,7 @@
   * @param args Array of command-line argument strings (not used in this program).
   * @return 0 on successful execution.
   */
-int main(int argc, char* args[]) 
+int main(int argc, char* args[])
 {
     SDL_Init(SDL_INIT_VIDEO); // Initialize SDL with video subsystem
 
@@ -21,56 +23,53 @@ int main(int argc, char* args[])
         800, 600, 0);
 
     // Create a renderer to draw graphics on the window
-    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1 , SDL_RENDERER_ACCELERATED);
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
-    // Set up two circles with initial positions, velocities, radius, and mass
-    Circle circle1 = { .x = 100.0f, .y = 100.0f, .velX = 0.0f, .velY = 0.0f, .radius = 20.0f, .mass =  1.0f };
-    Circle circle2 = { .x = 150.0f, .y = 200.0f, .velX = 0.0f, .velY = 0.0f, .radius = 25.0f, .mass = 2.0f };
+
+    // Set up a rectangle with initial position, velocities, width, height, and mass
+    Rectangle rectangle = { .x = 400.0f, .y = 300.0f, .velX = 0.0f, .velY = 0.0f, .width = 40.0f, .height = 30.0f, .mass = 2.0f };
+
+    // Seed the random number generator
+    srand(SDL_GetTicks());
+
+    // Generate random initial velocities for the rectangle
+    rectangle.velX = (float)(rand() % 200 - 100); // Random value between -100 and 100
+    rectangle.velY = (float)(rand() % 200 - 100); // Random value between -100 and 100
 
     float deltaTime = 0.016f; // Time step for simulation (adjust as needed)
 
     int quit = 0;
-    while (!quit) 
+    while (!quit)
     {
         // Handle SDL events, such as window close
         SDL_Event event;
-        while (SDL_PollEvent(&event)) 
+        while (SDL_PollEvent(&event))
         {
-            if (event.type == SDL_QUIT) 
+            if (event.type == SDL_QUIT)
             {
                 quit = 1; // Set quit flag to exit the game loop
             }
         }
 
-        // Apply gravity to both circles
-        applyGravity(&circle1, deltaTime);
-        applyGravity(&circle2, deltaTime);
+        // Apply a force to the rectangle (adjust the force values as needed)
+        float forceX = 500.0f;  // Force along the X-axis
+        float forceY = -800.0f; // Force along the Y-axis (negative value for upward force)
+        applyForce(&rectangle, forceX, forceY, deltaTime);
 
-        // Update the positions of both circles based on their velocities
-        updatePosition(&circle1, deltaTime);
-        updatePosition(&circle2, deltaTime);
+        // Update the position of the rectangle based on its velocity
+        updateRectanglePosition(&rectangle, deltaTime);
 
-        // Check if the two circles collide and resolve the collision if necessary
-        if (checkCollision(&circle1, &circle2)) 
-        {
-            resolveCollision(&circle1, &circle2);
-        }
+        // Check for collision with window boundaries and simulate reality
+        checkCollisionWithWindow(&rectangle, 800, 600);
 
         // Clear the renderer with a black color
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
 
-        // Draw a line between the centers of the two circles
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-        SDL_RenderDrawLine(renderer, (int)circle1.x, (int)circle1.y, (int)circle2.x, (int)circle2.y);
-
-        // Draw the first circle with a red color
-        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-        drawCircle(renderer, (int)circle1.x, (int)circle1.y, (int)circle1.radius);
-
-        // Draw the second circle with a blue color
-        SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
-        drawCircle(renderer, (int)circle2.x, (int)circle2.y, (int)circle2.radius);
+        // Draw the rectangle with a green color
+        SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+        SDL_Rect rect = { (int)(rectangle.x - rectangle.width / 2), (int)(rectangle.y - rectangle.height / 2), (int)rectangle.width, (int)rectangle.height };
+        SDL_RenderFillRect(renderer, &rect);
 
         // Render the graphics on the window
         SDL_RenderPresent(renderer);

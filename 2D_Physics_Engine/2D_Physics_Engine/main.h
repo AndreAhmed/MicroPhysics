@@ -55,7 +55,7 @@ void applyGravity(Circle* circle, float deltaTime)
  * @param circle Pointer to the Circle struct to update its position.
  * @param deltaTime The time step for the simulation.
  */
-void updatePosition(Circle* circle, float deltaTime)
+void updateCirclePosition(Circle* circle, float deltaTime)
 {
     circle->x += circle->velX * deltaTime;
     circle->y += circle->velY * deltaTime;
@@ -69,9 +69,9 @@ void updatePosition(Circle* circle, float deltaTime)
  */
 int checkCollision(Circle* c1, Circle* c2)
 {
-    float dx = c2->x - c1->x;
-    float dy = c2->y - c1->y;
-    float distance = sqrt(dx * dx + dy * dy);
+    double dx = c2->x - c1->x;
+    double dy = c2->y - c1->y;
+    double distance = sqrt(dx * dx + dy * dy);
     return distance <= (c1->radius + c2->radius);
 }
 
@@ -88,26 +88,26 @@ int checkCollision(Circle* c1, Circle* c2)
 void resolveCollision(Circle* c1, Circle* c2)
 {
     // Calculate the distance between the centers of the two circles
-    float dx = c2->x - c1->x;
-    float dy = c2->y - c1->y;
-    float distance = sqrt(dx * dx + dy * dy);
+    double dx = c2->x - c1->x;
+    double dy = c2->y - c1->y;
+    double distance = sqrt(dx * dx + dy * dy);
 
     // Calculate the normalized collision normal (direction of collision)
-    float nx = dx / distance;
-    float ny = dy / distance;
+    double nx = dx / distance;
+    double ny = dy / distance;
 
     // Calculate the amount of overlap between the circles
-    float overlap = (c1->radius + c2->radius) - distance;
+    double overlap = (c1->radius + c2->radius) - distance;
 
     // Separate the circles by adjusting their positions along the collision normal
     c1->x -= overlap * nx;
     c1->y -= overlap * ny;
 
     // Calculate the relative velocity of the circles along the collision normal
-    float relativeVelocity = c1->velX * nx + c1->velY * ny - c2->velX * nx - c2->velY * ny;
+    double relativeVelocity = c1->velX * nx + c1->velY * ny - c2->velX * nx - c2->velY * ny;
 
     // Calculate the impulse (change in momentum) for the collision resolution
-    float impulse = 2 * relativeVelocity / (c1->mass + c2->mass);
+    double impulse = 2 * relativeVelocity / (c1->mass + c2->mass);
 
     // Update the velocities of the circles after the collision
     c1->velX -= impulse * c2->mass * nx;
@@ -207,7 +207,7 @@ void checkCollisionWithWindow(Rectangle* rectangle, int windowWidth, int windowH
  * @param rectangle Pointer to the Rectangle struct to update its position.
  * @param deltaTime The time step for the simulation.
  */
-void updatePosition(Rectangle* rectangle, float deltaTime)
+void updateRectanglePosition(Rectangle* rectangle, float deltaTime)
 {
     rectangle->x += rectangle->velX * deltaTime;
     rectangle->y += rectangle->velY * deltaTime;
