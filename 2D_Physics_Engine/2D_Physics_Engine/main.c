@@ -1,7 +1,5 @@
 #include "main.h"
 
-
-
  /**
   * @brief The main function to run the 2D physics engine.
   *
@@ -51,10 +49,9 @@ int main(int argc, char* args[])
             }
         }
 
-        // Apply a force to the rectangle (adjust the force values as needed)
-        float forceX = 500.0f;  // Force along the X-axis
-        float forceY = -800.0f; // Force along the Y-axis (negative value for upward force)
-        applyForce(&rectangle, forceX, forceY, deltaTime);
+        // Apply gravity to the rectangle
+        float gravity = 200.0f; // Adjust the value as needed
+        rectangle.velY += gravity * deltaTime; // Vf = Vi + a * dt
 
         // Update the position of the rectangle based on its velocity
         updateRectanglePosition(&rectangle, deltaTime);
