@@ -73,7 +73,7 @@ int main(int argc, char* args[])
 	return 0;
 }
 
-/**********************************< Sub Program Section **********************************/
+/**********************************< Subprogram Section **********************************/
 bool init()
 {
 	//Initialization flag

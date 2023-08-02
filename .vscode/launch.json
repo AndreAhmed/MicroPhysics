@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build",
+        "type": "shell",
+        "command": "gcc",
+        "args": [
+          "-o",
+          "my_program.exe",
+          "main.c",
+          "-IC:/path/to/sdl/include",
+          "-LC:/path/to/sdl/lib",
+          "-lmingw32",
+          "-lSDL2main",
+          "-lSDL2",
+          "-lSDL2_image"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
+  

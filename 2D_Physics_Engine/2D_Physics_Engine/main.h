@@ -20,6 +20,25 @@ typedef struct
 } Circle;
 
 /**
+ * @struct Rectangle
+ * @brief Represents a rectangle in 2D space with position, velocity, width, height, and mass.
+ *
+ * This struct is used to represent a rectangle in a 2D physics simulation. It contains information
+ * about the rectangle's position, velocity, dimensions (width and height), and mass. The rectangle
+ * can be affected by forces and will move and interact with other objects accordingly.
+ */
+typedef struct
+{
+    float x;            /**< The x-coordinate of the rectangle's center. */
+    float y;            /**< The y-coordinate of the rectangle's center. */
+    float velX;         /**< The velocity component along the X-axis. */
+    float velY;         /**< The velocity component along the Y-axis. */
+    float width;        /**< The width of the rectangle. */
+    float height;       /**< The height of the rectangle. */
+    float mass;         /**< The mass of the rectangle. */
+} Rectangle;
+
+/**
  * @brief Applies gravity to a circle.
  * @param circle Pointer to the Circle struct to apply gravity to.
  * @param deltaTime The time step for the simulation.
@@ -133,6 +152,66 @@ void drawCircle(SDL_Renderer* renderer, int x, int y, int radius)
     }
 }
 
+/**
+ * @brief Applies a force to a rectangle.
+ * @param rectangle Pointer to the Rectangle struct to apply the force to.
+ * @param forceX The force along the X-axis.
+ * @param forceY The force along the Y-axis.
+ * @param deltaTime The time step for the simulation.
+ */
+void applyForce(Rectangle* rectangle, float forceX, float forceY, float deltaTime)
+{
+    // Apply the force to the rectangle using Newton's second law: F = ma
+    float accelerationX = forceX / rectangle->mass;
+    float accelerationY = forceY / rectangle->mass;
+
+    rectangle->velX += accelerationX * deltaTime;
+    rectangle->velY += accelerationY * deltaTime;
+}
+
+/**
+ * @brief Checks for collision between the rectangle and the window boundaries.
+ * @param rectangle Pointer to the Rectangle struct.
+ * @param windowWidth The width of the window.
+ * @param windowHeight The height of the window.
+ */
+void checkCollisionWithWindow(Rectangle* rectangle, int windowWidth, int windowHeight)
+{
+    // Check for collision with the left and right boundaries
+    if (rectangle->x - rectangle->width / 2 < 0)
+    {
+        rectangle->x = rectangle->width / 2;
+        rectangle->velX = -rectangle->velX; // Reverse the X-velocity to simulate a bounce.
+    }
+    else if (rectangle->x + rectangle->width / 2 > windowWidth)
+    {
+        rectangle->x = windowWidth - rectangle->width / 2;
+        rectangle->velX = -rectangle->velX; // Reverse the X-velocity to simulate a bounce.
+    }
+
+    // Check for collision with the top and bottom boundaries
+    if (rectangle->y - rectangle->height / 2 < 0)
+    {
+        rectangle->y = rectangle->height / 2;
+        rectangle->velY = -rectangle->velY; // Reverse the Y-velocity to simulate a bounce.
+    }
+    else if (rectangle->y + rectangle->height / 2 > windowHeight)
+    {
+        rectangle->y = windowHeight - rectangle->height / 2;
+        rectangle->velY = -rectangle->velY; // Reverse the Y-velocity to simulate a bounce.
+    }
+}
+
+/**
+ * @brief Updates the position of a rectangle based on its velocity.
+ * @param rectangle Pointer to the Rectangle struct to update its position.
+ * @param deltaTime The time step for the simulation.
+ */
+void updatePosition(Rectangle* rectangle, float deltaTime)
+{
+    rectangle->x += rectangle->velX * deltaTime;
+    rectangle->y += rectangle->velY * deltaTime;
+}
 
 
 
