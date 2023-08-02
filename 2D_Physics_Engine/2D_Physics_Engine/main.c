@@ -107,7 +107,7 @@ int main(int argc, char* args[])
         if (!isDragging)
         {
             // Adjust the force values as needed
-            forceX = 500.0f;
+            forceX = 0.0f;
             forceY = 800.0f; // Negative value for upward force
         }
 
