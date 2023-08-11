@@ -24,4 +24,4 @@
 - **LCD_RST:** Reset control signal for display.
 - **GND:** Ground connection between display and microcontroller.
 
-Remember to also connect power supply pins (5V) and potentially the backlight control pin (LED) as needed based on your specific TFT LCD module. Ensure proper configuration and initialization of the SPI interface and GPIO pins in your STM32F103C8 code according to the documentation of both the display and the microcontroller.
+Remember to also connect power supply pins (5V) and potentially the backlight control pin (LED) as needed based on your specific TFT LCD module. Ensure proper configuration and initialization of the SPI interface and GPIO pins in our STM32F103C8 code according to the documentation of both the display and the microcontroller.
