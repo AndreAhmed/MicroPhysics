@@ -13,6 +13,32 @@
 | LCD_RST    | Digital Output on STM32F103C8               | Reset control signal for the display.                                                         |
 | GND        | Ground (GND) of STM32F103C8                 | Connect both GND pins of the display to the microcontroller's ground.                         |
 
+## TFT LCD Module SPI Interface Pin Connections
+
+- **SPI_MISO (Display Data In - from Display to Microcontroller):**
+  Connect this pin from the TFT LCD module to the MOSI (Master Out Slave In) pin of the STM32F103C8. This connection allows data to flow from the display to the microcontroller, such as touch input data or display status information.
+
+- **SPI_MOSI (Display Data Out - from Microcontroller to Display):**
+  Connect this pin from the TFT LCD module to the MISO (Master In Slave Out) pin of the STM32F103C8. This connection allows data to flow from the microcontroller to the display, such as display commands and pixel data.
+
+- **SPI_CLK (Clock Signal):**
+  Connect this pin from the TFT LCD module to the SPI clock (SCK) pin of the STM32F103C8. The SPI clock signal synchronizes the data transmission between the microcontroller and the display.
+
+- **LCD_CS (Chip Select - Active Low):**
+  Connect this pin from the TFT LCD module to a digital output pin on the STM32F103C8 that you will use as the chip select (CS) signal. This signal is used to enable communication with the display. When this pin is low, the display is selected for communication.
+
+- **LCD_RS (Data/Command - Register Select):**
+  Connect this pin from the TFT LCD module to a digital output pin on the STM32F103C8 that you will use to control the Data/Command (DC/RS) signal. This signal indicates whether the data being sent is a command (configuration data) or display data.
+
+- **LCD_WR (Write Control - Active Low):**
+  Connect this pin from the TFT LCD module to a digital output pin on the STM32F103C8. This pin controls the write operation for the display. When this pin is low, the microcontroller is writing data to the display.
+
+- **LCD_RST (Reset - Active Low):**
+  Connect this pin from the TFT LCD module to a digital output pin on the STM32F103C8. This pin is used to reset the display.
+
+- **GND (Ground):**
+  Connect both GND pins from the TFT LCD module to the ground (GND) of the STM32F103C8 to provide a common ground reference.
+
 ## Notes
 
 - **SPI_MISO:** Data line from display to microcontroller for sending data.
