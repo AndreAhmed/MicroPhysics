@@ -2,7 +2,7 @@
 
 ## Interface Definition
 
-![Interface Diagram](https://github.com/AndreAhmed/MicroPhysics/raw/6f3fcbc07e52ccadd7311f0a9be394e4498d1c5b/Picture/your_picture_filename.png)
+![Interface Diagram](https://github.com/AndreAhmed/MicroPhysics/raw/6f3fcbc07e52ccadd7311f0a9be394e4498d1c5b/Picture/1200px-3.2-2560_MAR3201_Module_PinMap.jpg)
 
 | Number | Module Pin | Pin Description                      | Number | Module Pin | Pin Description |
 |--------|------------|--------------------------------------|--------|------------|-----------------|
