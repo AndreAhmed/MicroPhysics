@@ -2,6 +2,8 @@
 
 ## Interface Definition
 
+![Interface Diagram](https://github.com/AndreAhmed/MicroPhysics/raw/6f3fcbc07e52ccadd7311f0a9be394e4498d1c5b/Picture/your_picture_filename.png)
+
 | Number | Module Pin | Pin Description                      | Number | Module Pin | Pin Description |
 |--------|------------|--------------------------------------|--------|------------|-----------------|
 | 1      | 5V         | Positive power supply                | 2      | 5V         | Positive power supply |
