@@ -1,18 +1,5 @@
 # TFT LCD Module Interface Using SPI with STM32F103C8
 
-## Pin Connections
-
-| Pin        | Connection                                  | Description                                                                                   |
-|------------|---------------------------------------------|-----------------------------------------------------------------------------------------------|
-| SPI_MISO   | STM32F103C8 MOSI (Master Out Slave In)      | Data line from the display to the microcontroller for sending data.                           |
-| SPI_MOSI   | STM32F103C8 MISO (Master In Slave Out)      | Data line from the microcontroller to the display for sending data.                           |
-| SPI_CLK    | STM32F103C8 SPI Clock (SCK)                 | Clock signal for synchronizing data transmission.                                             |
-| LCD_CS     | Digital Output on STM32F103C8               | Chip select signal for the display. Drive low to select the display for communication.        |
-| LCD_RS     | Digital Output on STM32F103C8               | Control signal for Data/Command (DC/RS) on the display. Indicates command or display data.    |
-| LCD_WR     | Digital Output on STM32F103C8               | Controls the write operation for the display.                                                 |
-| LCD_RST    | Digital Output on STM32F103C8               | Reset control signal for the display.                                                         |
-| GND        | Ground (GND) of STM32F103C8                 | Connect both GND pins of the display to the microcontroller's ground.                         |
-
 ## TFT LCD Module SPI Interface Pin Connections
 
 - **SPI_MISO (Display Data In - from Display to Microcontroller):**
@@ -38,6 +25,19 @@
 
 - **GND (Ground):**
   Connect both GND pins from the TFT LCD module to the ground (GND) of the STM32F103C8 to provide a common ground reference.
+
+## Pin Connections
+
+| Pin        | Connection                                  | Description                                                                                   |
+|------------|---------------------------------------------|-----------------------------------------------------------------------------------------------|
+| SPI_MISO   | STM32F103C8 MOSI (Master Out Slave In)      | Data line from the display to the microcontroller for sending data.                           |
+| SPI_MOSI   | STM32F103C8 MISO (Master In Slave Out)      | Data line from the microcontroller to the display for sending data.                           |
+| SPI_CLK    | STM32F103C8 SPI Clock (SCK)                 | Clock signal for synchronizing data transmission.                                             |
+| LCD_CS     | Digital Output on STM32F103C8               | Chip select signal for the display. Drive low to select the display for communication.        |
+| LCD_RS     | Digital Output on STM32F103C8               | Control signal for Data/Command (DC/RS) on the display. Indicates command or display data.    |
+| LCD_WR     | Digital Output on STM32F103C8               | Controls the write operation for the display.                                                 |
+| LCD_RST    | Digital Output on STM32F103C8               | Reset control signal for the display.                                                         |
+| GND        | Ground (GND) of STM32F103C8                 | Connect both GND pins of the display to the microcontroller's ground.                         |
 
 ## Notes
 
