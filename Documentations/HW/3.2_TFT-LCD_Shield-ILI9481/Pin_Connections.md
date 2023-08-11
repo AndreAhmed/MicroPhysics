@@ -2,27 +2,26 @@
 
 ## Interface Definition
 
-| Number | Module Pin | Pin Description | Number | Module Pin | Pin Description |
-|--------|------------|-----------------|--------|------------|-----------------|
-| 1      | 5V         | Positive power supply | 2      | 5V         | Positive power supply |
-| 3      | DB8        | 8th bit of data bus | 4      | DB9        | 9th bit of data bus |
-| 5      | DB10       | 10th bit of data bus | 6      | DB11       | 11th bit of data bus |
-| 7      | DB12       | 12th bit of data bus | 8      | DB13       | 13th bit of data bus |
-| 9      | DB14       | 14th bit of data bus | 10     | DB15       | 15th bit of data bus |
-| 11     | DB7        | 7th bit of data bus | 12     | DB6        | 6th bit of data bus |
-| 13     | DB5        | 5th bit of data bus | 14     | DB4        | 4th bit of data bus |
-| 15     | DB3        | Third bit of data bus | 16     | DB2        | 2nd bit of data bus |
-| 17     | DB1        | 1st bit of data bus | 18     | DB0        | 0 bit of data bus |
-| 19     | LCD_RS     | LCD register / data selection signal | | | |
-| 20     | LCD_WR     | LCD write control signal | | | |
+| Number | Module Pin | Pin Description                      | Number | Module Pin | Pin Description |
+|--------|------------|--------------------------------------|--------|------------|-----------------|
+| 1      | 5V         | Positive power supply                | 2      | 5V         | Positive power supply |
+| 3      | DB8        | 8th bit of data bus                  | 4      | DB9        | 9th bit of data bus |
+| 5      | DB10       | 10th bit of data bus                 | 6      | DB11       | 11th bit of data bus |
+| 7      | DB12       | 12th bit of data bus                 | 8      | DB13       | 13th bit of data bus |
+| 9      | DB14       | 14th bit of data bus                 | 10     | DB15       | 15th bit of data bus |
+| 11     | DB7        | 7th bit of data bus                  | 12     | DB6        | 6th bit of data bus |
+| 13     | DB5        | 5th bit of data bus                  | 14     | DB4        | 4th bit of data bus |
+| 15     | DB3        | Third bit of data bus                | 16     | DB2        | 2nd bit of data bus |
+| 17     | DB1        | 1st bit of data bus                  | 18     | DB0        | 0 bit of data bus |
+| 19     | LCD_RS     | LCD register / data selection signal | 20     | LCD_WR     | LCD write control signal|
 | 21     | LCD_CS     | LCD screen select control signal, low level enable | 22     | LCD_RST    | LCD reset control signal, low reset |
-| 23     | NC         | Undefined, reserved | 24     | NC         | Undefined, reserved |
-| 25     | NC         | Undefined, reserved | 26     | FLASH_CS   | SPI flash chip select control signal |
-| 27     | NC         | Undefined, reserved | 28     | NC         | Undefined, reserved |
-| 29     | NC         | Undefined, reserved | 30     | NC         | Undefined, reserved |
-| 31     | SPI_MISO   | SPI bus input signal | 32     | SPI_MOSI   | SPI bus output signal |
-| 33     | SPI_CLK    | SPI bus clock signal | 34     | SD_CS      | SD card select control signal, low level enable |
-| 35     | GND        | Power ground | 36     | GND        | Power ground |
+| 23     | NC         | Undefined, reserved                  | 24     | NC         | Undefined, reserved |
+| 25     | NC         | Undefined, reserved                  | 26     | FLASH_CS   | SPI flash chip select control signal |
+| 27     | NC         | Undefined, reserved                  | 28     | NC         | Undefined, reserved |
+| 29     | NC         | Undefined, reserved                  | 30     | NC         | Undefined, reserved |
+| 31     | SPI_MISO   | SPI bus input signal                 | 32     | SPI_MOSI   | SPI bus output signal |
+| 33     | SPI_CLK    | SPI bus clock signal                 | 34     | SD_CS      | SD card select control signal, low level enable |
+| 35     | GND        | Power ground                         | 36     | GND        | Power ground |
 
 ## TFT LCD Module SPI Interface Pin Connections
 
