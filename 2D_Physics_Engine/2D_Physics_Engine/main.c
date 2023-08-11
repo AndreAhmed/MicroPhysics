@@ -128,7 +128,7 @@ int main(int argc, char* args[])
         rectangle.velY += accelerationY * deltaTime;
 
         // If the rectangle's velocity becomes very small, stop its movement
-        if (fabs(rectangle.velX) < 0.5f && fabs(rectangle.velY) < 0.5f)
+        if (fabs(rectangle.velX) < 0.1f && fabs(rectangle.velY) < 0.1f)
         {
             rectangle.velX = 0.0f;
             rectangle.velY = 0.0f;
