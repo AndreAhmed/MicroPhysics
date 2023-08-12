@@ -1,6 +1,28 @@
 # TFT LCD Module Interface Using SPI with STM32F103C8
 
+## Product Parameters
+
+| Name                  | Parameter                          |
+|-----------------------|------------------------------------|
+| Display Color         | RGB 65K color                      |
+| SKU                   | MAR3201                            |
+| Screen Size           | 3.2 (inch)                         |
+| Type                  | TFT                                |
+| Driver IC             | ILI9481                            |
+| Resolution            | 480x320 (Pixel)                    |
+| Module Interface      | 16-bit parallel interface          |
+| Active Area           | 45.12x67.68 (mm)                   |
+| Module PCB Size       | 54.25x89.92 (mm)                   |
+| Backlight             | 6 chip HighLight white LEDs        |
+| Operating Temperature | -20℃~60℃                         |
+| Storage Temperature   | -30℃~70℃                         |
+| Operating Voltage     | 5V/3.3V                            |
+| Power Consumption     | TBD                                |
+| Product Weight        | About 42 g (Package containing)    |
+
 ## Interface Definition
+
+![Interface Diagram](https://github.com/AndreAhmed/MicroPhysics/raw/6f3fcbc07e52ccadd7311f0a9be394e4498d1c5b/Picture/1200px-3.2-2560_MAR3201_Module_PinMap.jpg)
 
 | Number | Module Pin | Pin Description                      | Number | Module Pin | Pin Description |
 |--------|------------|--------------------------------------|--------|------------|-----------------|
